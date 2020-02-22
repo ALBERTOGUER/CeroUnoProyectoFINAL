@@ -3,6 +3,8 @@ import ImgComponent from "../components/ImgComponent";
 import MoviesComponent from "../components/MoviesComponent";
 import Button from "../components/Button";
 
+
+
 class HomeContainer extends Component {
   state = {
     movies: [],
@@ -20,7 +22,6 @@ class HomeContainer extends Component {
       .then(response => response.json())
       .then(data => {
         console.log(data);
-
         this.setState({
           movies: data.results,
           movie1: data.results[0].backdrop_path,
@@ -41,35 +42,34 @@ class HomeContainer extends Component {
     const API_KEY = "0d59c137d4b1775154cc094577fbe290";
     const IMAGE_BASE_URL = "http://image.tmdb.org/t/p/";
 
-    const url = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${this.state.currentPage++}`;
-    console.log(this.state.currentPage);
+    const url = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${this
+      .state.currentPage++}`;
 
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
+        
+        
         let array = this.state.movies;
-        console.log(array);
-
         data.results.map(cambio => array.push(cambio));
         this.setState(prevState => ({
-          movies: array,
-          
+          movies: array
         }));
-
-        console.log(this.state.movies);
       });
+  };
+
+  handleDirectMovie = (e) => {
+    console.log(e.target.name);
+    this.props.history.push(`/movie/${e.target.name}`);
   };
 
   render() {
     const movieCard = this.state.movies.map((img, idx) => (
-      <MoviesComponent movie={img} key={idx} />
+      <MoviesComponent movie={img} key={idx} action={this.handleDirectMovie} />
     ));
 
-    console.log(movieCard);
-
     return (
-      <div className="mb-3">
+      <div className="mb-4 flex">
         <ImgComponent
           movie1={this.state.movie1}
           movie2={this.state.movie2}

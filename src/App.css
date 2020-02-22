@@ -16,12 +16,59 @@ font-family: 'Architects Daughter',  !important;
 }
 
 #section_img{
-  width: 100vw;
+  width: 100%;
   
-  background: blue;
  
 }
 
 .image_Size{
   height: 88vh !important;
+}
+#contenedor{
+  height: 88vh;
+  width: 100%;
+
+}
+#MOvieimg{
+  width: 100%;
+  
+}
+.infomovie{
+  background: rgba(65, 147, 177, 0.5);
+ position: absolute;
+ width: 80%;
+ height: 70%;
+ top: 10%;
+ left: 10%;
+ display: flex;
+ justify-content: space-between;
+}
+
+.section{
+ 
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section2{
+  height: 100%;
+  width: 60%;
+  color: white;
+  padding: 30px;
+}
+
+#poster{
+  width: 60%;
+  
+}
+.btn-block{
+  width: 82% !important;
+}
+
+.flex{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

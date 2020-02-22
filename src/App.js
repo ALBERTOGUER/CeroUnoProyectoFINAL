@@ -1,6 +1,6 @@
 import React from "react";
-import Home from "./pages/Home";
-import Movie from "./pages/Movie";
+import Home from "./containers/HomeContainer";
+import Movie from "./containers/MovieContainer";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import "./App.css";

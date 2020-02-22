@@ -5,7 +5,6 @@ const ImgComponent = props => {
   const urlimg1 = `${IMAGE_BASE_URL}w1280${props.movie1}`;
   const urlimg2 = `${IMAGE_BASE_URL}w1280${props.movie2}`;
   const urlimg3 = `${IMAGE_BASE_URL}w1280${props.movie3}`;
-  console.log(urlimg1);
 
   return (
     <div id="section_img">
